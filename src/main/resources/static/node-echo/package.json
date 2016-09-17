@@ -1,0 +1,14 @@
+{
+  "name": "node-echo",
+  "description":"node-echo Demo",
+  "version":"1.0.0",
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/superluo/NodeJsExample"
+  },
+  "license":"Apache-2.0",
+  "main": "./lib/echo.js",
+  "bin":{
+    "node-echo":"./bin/node-echo"
+  }
+}
