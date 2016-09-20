@@ -3,7 +3,9 @@ let url = require('url');
 let path = require('path');
 let fs = require('fs');
 
-let mine = require('./mine.js');
+let jsonData = require('./data.json');
+
+let mine = require('./mine');
 
 const PORT = 8080;
 const IP = '192.168.1.163';
@@ -20,7 +22,7 @@ function handleRequest(request,response){
         //undefined stats ; WARNNING:https://nodejs.org/api/fs.html#fs_fs_stat_path_callback
         console.log('Stats Parameter: ' + stats);
         if(error){
-            response.write("This Request URL " + pathName + " was not found on this server.");
+            response.write("This Request URL " + pathName + " was not found on this server =>" + jsonData.info);
             response.end();
         }else{
             fs.readFile(realPath,"binary",function(error,file){
@@ -28,7 +30,7 @@ function handleRequest(request,response){
                     response.writeHead(500,{'Content-Type':'text/plain'});
                     response.end(error);
                 }else{
-                    let contentType = mine[extType];
+                    let contentType = mine.types[extType];
                     console.log('current file type: ' + contentType);
                     response.writeHead(200,{'Content-Type':contentType});
                     response.write(file,"binary");
