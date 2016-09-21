@@ -1,8 +1,8 @@
 console.log('Beginning');
 
 process.on('message',function(msg){
-    console.log("child message: " + msg);
-    msg.hello = msg.hello.toUppercase();
+    console.log("child message: " + msg.call);
+    msg.ack = msg.call.toUpperCase();
     process.send(msg);
 });
 
