@@ -1,15 +1,11 @@
 var net = require('net');
 
-net.createServer(function(connection){
+var server=net.createServer(function(connection){
     connection.on('data',function(data){
         connection.write([
-            'HTTP/1.1 200 OK',
-            'Content-Type: text/plain',
-            'Content-Length: 11',
-            'AhluoTest: Test',
-            '',
             'Hello Net'
         ].join('\n'));
+        console.log("Client Says: " + data);
     });
 }).listen(8080);
 

@@ -7,12 +7,7 @@ var options = {
 
 var client = net.connect(options,function(){
     client.write([
-        'GET / HTTP/1.1',
-        'User-Agent: curl/7.26.0',
-        'Host: www.ahluo.com',
-        'Accept: */*',
-        '',
-        ''
+        'hi server'
     ].join('\n'));
 });
 client.on('data',function(data){

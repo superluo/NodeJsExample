@@ -5,7 +5,7 @@ console.log("Result: " + str);
 
 var sub = bin.slice(2);
 console.log("sub: " + sub);
-sub[0]=0x69;
+sub[0]=0x61;
 console.log('change slice: ' + bin);
 
 var bin_1 = new Buffer('hello word','utf-8');

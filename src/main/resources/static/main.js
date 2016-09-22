@@ -1,3 +1,3 @@
-var hello = require('functions/hi/hello');
+var hello = require('demo/Server');
 
 console.log(hello.hello());
